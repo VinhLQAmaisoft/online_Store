@@ -31,5 +31,8 @@ router.get('/shop', function (req, res, next) {
 router.get('/product/:id', function (req, res, next) {
   res.render('shop-detail', { layout: 'layouts/full-page' });
 });
+router.get('/checkout',function (req,res){
+  res.render('checkout',{layout: 'layouts/full-page' })
+})
 
 module.exports = router;

@@ -92,118 +92,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<div class="container-fluid">
-    <!-- Credit Card Payment Form - START -->
-    <div class="row">
-        <div class="col-md-8 " id="payment-modal">
-            <div class="row panel panel-default">
-                <div class="col-12 panel-heading">
-                    <div class="row">
-                        <h3 style="text-align: center;">Credit Card Payment Gateway</h3>
-                        <strong> <i class="text-left">Verified By </i></strong>
-                        <div class="inlineimage">
-                            <img class="img-responsive images"
-                                src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png">
-                            <img class="img-responsive images"
-                                src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png">
-                            <img class="img-responsive images"
-                                src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png">
-                            <img class="img-responsive images"
-                                src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 panel-body">
-                    <div class="row">
-                        <div class="payment-input">
-                        
-                               <strong>  NUMBER</strong><span style="color:red">*</span>
-                            <br>
-                            <input type="text" style="width:100%" id="cart-number"
-                                placeholder="Card Number">
-                        </div>
-                        <div style="display:flex">
-                            <div class="payment-input">
-                                <!-- END DATE<span style="color:red">*</span><br> -->
-                                <input type="text" name="card-number" id="cart-number" placeholder="">
-                            </div>
-                            <div class="payment-input" style="margin-left:20px">
-                                CVV2/CVC2
-                                <span style="color:red">*</span><br>
-                                <input style="width:150px" type="text" name="card-number" id="cart-number"
-                                    placeholder="CVV2/CVC2">
-                            </div>
-                        </div>
-                        <div class="payment-input">
-                            CARD OWNER
-                            <span style="color:red">*</span><br>
-                            <input type="text" style="width:100%" name="card-number" id="cart-number"
-                                placeholder="Card Owner Name">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 panel-footer">
-                    <div class="row">
-                        <div class="col-xs-12"> <button onclick="submitPayment()"
-                                class="btn btn-success btn-lg btn-block">Confirm
-                                Payment</button> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-    #payment-modal {
-        z-index: 99999;
-        padding: 0px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 450px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -250px;
-        /* Negative half of height. */
-        margin-left: -200px;
-        /* Negative half of width. */
-    }
 
-    .inlineimage {
-        max-width: 470px;
-        margin-right: 8px;
-        margin-left: 10px
-    }
 
-    .images {
-        display: inline-block;
-        max-width: 98%;
-        height: auto;
-        width: 22%;
-        margin: 1%;
-        left: 20px;
-        text-align: center
-    }
-
-    .payment-input {
-        padding: 5px;
-    }
-
-    .payment-input input {
-        width: 100%;
-        border: 1px solid gray;
-        border-radius: 5px;
-        padding: 10px !important;
-        color: gray !important;
-    }
-</style>
 <script>
 
-    var payModal = document.getElementById("payment-modal")
-    payModal.style.display = 'none'
-    console.log("PAY MODAL: ", payModal);
-
+  
     function buynow() {
-        payModal.style.display = 'block'
+        window.location.href ='/checkout'
 
     }
 
