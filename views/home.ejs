@@ -34,88 +34,8 @@
     class="page-template-default page scheme_default body_style_wide expand_content remove_margins menu_style_right menu_style_side no_layout">
     <div class="body_wrap">
         <div class="page_wrap">
-            <header class="top_panel top_panel_default without_bg_image scheme_default"></header>
-            <div class="menu_side_wrap scheme_default">
-                <span class="menu_side_button icon-menu-2"></span>
-                <div class="menu_side_inner">
-                    <div class="toc_menu_item">
-                        <a href="#" class="toc_menu_description menu_mobile_description">menu</a>
-                        <a class="menu_mobile_button toc_menu_icon icon-menu-2" href="#"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="menu_mobile_overlay"></div>
-            <div class="menu_mobile scheme_dark">
-                <div class="menu_mobile_inner">
-                    <a class="menu_mobile_close icon-cancel"></a>
-                    <a class="sc_layouts_logo" href="/"><img src="/images/logo_light.png" alt=""></a>
-                    <nav class="menu_mobile_nav_area">
-                        <ul id="menu_mobile-main-menu" class="">
-                            <li class="menu-item current-menu-ancestor">
-                                <a href="/">
-                                    <span>Home</span>
-                                </a>
-
-                            </li>
-                            <li class="menu-item ">
-                                <a href="/about-us">
-                                    <span>About Us</span>
-                                </a>
-
-                            </li>
-
-                            <li class="menu-item">
-                                <a href="/fashion-blogs">
-                                    <span>Fashion Tails</span>
-                                </a>
-
-                            </li>
-                            <li class="menu-item">
-                                <a href="/shop">
-                                    <span>Store</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="/gallery">
-                                    <span>Gallery</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="/contact">
-                                    <span>Contacts</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="search_wrap search_style_normal search_mobile">
-                        <div class="search_form_wrap">
-                            <form role="search" method="get" class="search_form" action="#">
-                                <input type="text" class="search_field" placeholder="Search" value="" name="s">
-                                <button type="submit" class="search_submit trx_addons_icon-search"></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="socials_mobile">
-                        <span class="social_item">
-                            <a href="#" class="social_icons social_twitter">
-                                <span class="trx_addons_icon-twitter"></span>
-                            </a>
-                        </span><span class="social_item">
-                            <a href="#" class="social_icons social_facebook">
-                                <span class="trx_addons_icon-facebook"></span>
-                            </a>
-                        </span><span class="social_item">
-                            <a href="#" class="social_icons social_gplus">
-                                <span class="trx_addons_icon-gplus"></span>
-                            </a>
-                        </span><span class="social_item">
-                            <a href="#" class="social_icons social_instagram">
-                                <span class="trx_addons_icon-instagram"></span>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <%-include('./components/header.ejs')%>
+            
             <div class="page_content_wrap scheme_default">
                 <div class="content">
                     <article class="post_item_single post_type_page page type-page">
@@ -253,7 +173,6 @@
                                                                         data-hoffset="-332" data-y="center"
                                                                         data-voffset="308" data-width="['auto']"
                                                                         data-height="['auto']" data-type="button"
-                                                                      
                                                                         data-responsive_offset="on"
                                                                         data-responsive="off"
                                                                         data-frames='[{"delay":700,"speed":700,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Quad.easeInOut"},{"delay":"wait","speed":700,"frame":"999","to":"auto:auto;","ease":"Quad.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","force":true,"to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(20, 20, 20, 1.00);bc:rgba(20, 20, 20, 1.00);bw:0 0 3px 0;"}]'
@@ -365,71 +284,9 @@
                                     </div>
                                 </div>
                             </section>
+                            
                             <section>
-                                <div class="content_container">
-                                    <div class="column_row">
-                                        <div class="columns_wrap">
-                                            <div
-                                                class="column_container column-7_12 sc_layouts_column_icons_position_left scr_xs">
-                                                <div class="column-inner mb-20px">
-                                                    <a id="sc_anchor_hot" class="sc_anchor sc_anchor_default"
-                                                        title="hot" data-icon="" data-url=""></a>
-                                                    <div class="sc_action sc_action_default"
-                                                        data-slides-min-width="250">
-                                                        <div class="sc_action_content sc_item_content">
-                                                            <div
-                                                                class="sc_action_item sc_action_item_default with_image sc_action_fixed_height sc_action_item_tl bg_promo-2 overflow_hid h-30_8em">
-                                                                <div class="sc_action_item_mask"></div>
-                                                                <div class="sc_action_item_inner">
-                                                                    <h3 class="sc_action_item_title"><span>Sexy
-                                                                            Thongs</span></h3>
-                                                                    <div class="sc_action_item_description">
-                                                                        <span>fun and flirty pieces for a<br /></span>
-                                                                        <span>seamless look</span>
-                                                                    </div>
-                                                                    <a href="/shop"
-                                                                        class="sc_action_item_link">browse</a>
-                                                                </div>
-                                                                <!-- /.sc_action_item_inner -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.sc_action -->
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="column_container column-5_12 sc_layouts_column_icons_position_left scr_xs">
-                                                <div class="column-inner">
-                                                    <div class="text_column">
-                                                        <div class="sc_action sc_action_default brd-0_867em_red"
-                                                            data-slides-min-width="250">
-                                                            <div class="sc_action_content sc_item_content">
-                                                                <div
-                                                                    class="sc_action_item sc_action_item_default with_image sc_action_fixed_height sc_action_item_bl bg_promo-5 overflow_hid h-29_066em">
-                                                                    <div class="sc_action_item_mask"></div>
-                                                                    <div class="sc_action_item_inner">
-                                                                        <h3 class="sc_action_item_title"><span>Cute
-                                                                                Bikinis</span></h3>
-                                                                        <div class="sc_action_item_description">
-                                                                            <span>Fun and flirty pieces for a</span>
-                                                                            <span>seamless look</span>
-                                                                        </div><a href="/shop"
-                                                                            class="sc_action_item_link">shop now</a>
-                                                                    </div>
-                                                                    <!-- /.sc_action_item_inner -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.sc_action -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section>
-                                <div class="content_container">
+                                <div class="content_container" style="width:100%">
                                     <div class="column-row" data-animation="animated fadeInUp normal">
                                         <div class="column_container column-1_1 sc_layouts_column_icons_position_left">
                                             <div class="column-inner">
@@ -735,160 +592,8 @@
                                     </div>
                                 </div>
                             </section>
-                            <section>
-                                <div class="content_container">
-                                    <div class="column_row">
-                                        <div class="column_container column-1_1 sc_layouts_column_icons_position_left">
-                                            <div class="column-inner">
-                                                <div class="empty_space h-1_1em"><span class="empty_space_inner"></span>
-                                                </div>
-                                                <div class="sc_title sc_title_default">
-                                                    <h2
-                                                        class="sc_item_title sc_title_title sc_align_center sc_item_title_style_default">
-                                                        Brands</h2>
-                                                    <div class="sc_item_descr sc_title_descr sc_align_center">a touch of
-                                                        coverage never felt so sexy</div>
-                                                </div>
-                                                <!-- /.sc_title -->
-                                                <div class="empty_space h-3_5em"><span class="empty_space_inner"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="no_pt">
-                                <div class="content_container">
-                                    <div class="column_row">
-                                        <div class="column-inner">
-                                            <div class="columns_wrap">
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/2.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/4.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/7.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/3.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="no_pt">
-                                <div class="content_container">
-                                    <div class="column_row">
-                                        <div class="column-inner">
-                                            <div class="columns_wrap">
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/1.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/5.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/8.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="column_container column-1_4 sc_layouts_column_icons_position_left scr_xs">
-                                                    <div class="column-inner">
-                                                        <div class="text_column">
-                                                            <div class="brd-1px_grey">
-                                                                <figure class="align_center">
-                                                                    <a href="#"><img src="/images/6.png" alt="" /></a>
-                                                                </figure>
-                                                            </div>
-                                                            <div class="empty_space h_30px"><span
-                                                                    class="empty_space_inner"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                           
+                           
                             <section>
                                 <div class="container-fluid">
                                     <div class="column_row">
@@ -1489,122 +1194,7 @@
                                     </div>
                                 </div>
                             </section>
-                            <section>
-                                <div class="content_container">
-                                    <div class="column_row">
-                                        <div class="column_container column-1_1 sc_layouts_column_icons_position_left">
-                                            <div class="column-inner">
-                                                <div class="empty_space hide_on_mobile h-2em"><span
-                                                        class="empty_space_inner"></span></div>
-                                                <a id="sc_anchor_blog" class="sc_anchor sc_anchor_default" title="blog"
-                                                    data-icon="" data-url=""></a>
-                                                <div class="empty_space h-4_4em"><span class="empty_space_inner"></span>
-                                                </div>
-                                                <div class="sc_blogger sc_blogger_classic" data-slides-per-view="2"
-                                                    data-slides-min-width="150">
-                                                    <h2
-                                                        class="sc_item_title sc_blogger_title sc_align_center sc_item_title_style_default">
-                                                        Blog</h2>
-                                                    <div
-                                                        class="sc_blogger_columns sc_item_columns trx_addons_columns_wrap columns_padding_bottom">
-                                                        <div class="trx_addons_column-1_2">
-                                                            <div class="sc_blogger_item post type-post">
-                                                                <div
-                                                                    class="post_featured with_thumb hover_icon sc_blogger_item_featured">
-                                                                    <img src="/images/post-29-1170x715.jpg"
-                                                                        alt="Lingerie Supports Fashion Targets Breast Cancer" />
-                                                                    <div class="mask"></div>
-                                                                    <div class="icons">
-                                                                        <a href="/blog/12345"
-                                                                            class="icon-search-alt"></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="sc_blogger_item_content entry-content">
-                                                                    <div class="sc_blogger_item_header entry-header">
-                                                                        <h4 class="sc_blogger_item_title entry-title">
-                                                                            <a href="/blog/12345">Lingerie Supports
-                                                                                Fashion Targets Breast Cancer</a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <!-- .entry-header -->
-                                                                    <div class="sc_blogger_item_excerpt">
-                                                                        <div class="sc_blogger_item_excerpt_text">
-                                                                            <p>Quuntur magni dolores eos qui ratione
-                                                                                voluptatem sequi nesciunt. Neque porro
-                                                                                quisquam est, qui dolorem ipsum quiaolor
-                                                                                sit amet, consectetur, adipisci velit,
-                                                                                sed quia non numquam eius modi tempora
-                                                                                incidunt ut labore et dolore magnam
-                                                                                dolor sit amet, consectetur adipisicing
-                                                                                elit, sed do eiusmod tempor incididunt
-                                                                                ut labore et dolore&hellip;</p>
-                                                                        </div>
-                                                                        <div
-                                                                            class="sc_blogger_item_button sc_item_button">
-                                                                            <a href="/blog/12345"
-                                                                                class="sc_button sc_button_simple">Read
-                                                                                more</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- .sc_blogger_item_excerpt -->
-                                                                </div>
-                                                                <!-- .entry-content -->
-                                                            </div>
-                                                            <!-- .sc_blogger_item -->
-                                                        </div>
-                                                        <div class="trx_addons_column-1_2">
-                                                            <div class="sc_blogger_item post type-post">
-                                                                <div
-                                                                    class="post_featured with_thumb hover_icon sc_blogger_item_featured">
-                                                                    <img src="/images/post-6-1170x715.jpg"
-                                                                        alt="Emotional Experience of Balconette Bra" />
-                                                                    <div class="mask"></div>
-                                                                    <div class="icons">
-                                                                        <a href="/blog/12345"
-                                                                            class="icon-search-alt"></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="sc_blogger_item_content entry-content">
-                                                                    <div class="sc_blogger_item_header entry-header">
-                                                                        <h4 class="sc_blogger_item_title entry-title">
-                                                                            <a href="/blog/12345">Emotional Experience
-                                                                                of Balconette Bra</a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <!-- .entry-header -->
-                                                                    <div class="sc_blogger_item_excerpt">
-                                                                        <div class="sc_blogger_item_excerpt_text">
-                                                                            <p>Quuntur magni dolores eos qui ratione
-                                                                                voluptatem sequi nesciunt. Neque porro
-                                                                                quisquam est, qui dolorem ipsum quiaolor
-                                                                                sit amet, consectetur, adipisci velit,
-                                                                                sed quia non numquam eius modi tempora
-                                                                                incidunt ut labore et dolore magnam
-                                                                                dolor sit amet, consectetur adipisicing
-                                                                                elit, sed do eiusmod tempor incididunt
-                                                                                ut labore et dolore&hellip;</p>
-                                                                        </div>
-                                                                        <div
-                                                                            class="sc_blogger_item_button sc_item_button">
-                                                                            <a href="/blog/12345"
-                                                                                class="sc_button sc_button_simple">Read
-                                                                                more</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- .sc_blogger_item_excerpt -->
-                                                                </div>
-                                                                <!-- .entry-content -->
-                                                            </div>
-                                                            <!-- .sc_blogger_item -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.sc_blogger -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            
                             <section>
                                 <div class="content_container">
                                     <div class="column_row">
@@ -1702,37 +1292,7 @@
                                         <a href='#' class='fsz-22pt' title='11 topics'>undershirt</a>
                                     </div>
                                 </aside>
-                                <aside id="trx_addons_widget_recent_posts-3"
-                                    class="column-1_4 widget widget_recent_posts">
-                                    <h5 class="widget_title">Blog</h5>
-                                    <article class="post_item with_thumb">
-                                        <div class="post_content">
-                                            <h6 class="post_title"><a href="#">Lingerie Supports Fashion Targets Breast
-                                                    Cancer</a></h6>
-                                            <div class="post_info"></div>
-                                        </div>
-                                    </article>
-                                    <article class="post_item with_thumb">
-                                        <div class="post_content">
-                                            <h6 class="post_title"><a href="#">A Case for No Shirt, No Problem</a></h6>
-                                            <div class="post_info"></div>
-                                        </div>
-                                    </article>
-                                    <article class="post_item with_thumb">
-                                        <div class="post_content">
-                                            <h6 class="post_title"><a href="#">Emotional Experience of Balconette
-                                                    Bra</a></h6>
-                                            <div class="post_info"></div>
-                                        </div>
-                                    </article>
-                                    <article class="post_item with_thumb">
-                                        <div class="post_content">
-                                            <h6 class="post_title"><a href="#">6 Tips for Your Sleeping Beauty Rest</a>
-                                            </h6>
-                                            <div class="post_info"></div>
-                                        </div>
-                                    </article>
-                                </aside>
+                                
                             </div>
                             <!-- /.columns_wrap -->
                         </div>
@@ -1752,7 +1312,6 @@
                                 <li class="menu-item"><a href="/about-us"><span>About Us</span></a></li>
                                 <li class="menu-item"><a href="/gallery"><span>Gallery</span></a></li>
                                 <li class="menu-item"><a href="/shop"><span>Shop</span></a></li>
-                                <li class="menu-item"><a href="/fashion-blogs"><span>Fashion Tail</span></a></li>
                                 <li class="menu-item"><a href="/contacts"><span>Contacts</span></a></li>
                             </ul>
                         </nav>

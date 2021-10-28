@@ -1865,7 +1865,7 @@ blockquote a {
 }
 
 .scheme_default .sc_button_hover_slide_left {
-    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 !important;
+    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 ;
 }
 
 .scheme_default .sc_button_hover_slide_right {
@@ -1929,7 +1929,7 @@ blockquote a {
 }
 
 .scheme_default .sc_button_hover_style_hover.sc_button_hover_slide_left {
-    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 !important;
+    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 ;
 }
 
 .scheme_default .sc_button_hover_style_hover.sc_button_hover_slide_right {
@@ -5929,7 +5929,7 @@ blockquote a {
 }
 
 .scheme_dark .sc_button_hover_style_inverse.sc_button_hover_slide_left {
-    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 !important;
+    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 ;
 }
 
 .scheme_dark .sc_button_hover_style_inverse.sc_button_hover_slide_right {
@@ -9898,7 +9898,7 @@ blockquote a {
 }
 
 .scheme_side .sc_button_hover_slide_left {
-    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 !important;
+    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 ;
 }
 
 .scheme_side .sc_button_hover_slide_right {
@@ -9962,7 +9962,7 @@ blockquote a {
 }
 
 .scheme_side .sc_button_hover_style_hover.sc_button_hover_slide_left {
-    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 !important;
+    background: linear-gradient(to right, #141414 50%, #fe7799 50%) no-repeat scroll right bottom/ 210% 100% #fe7799 ;
 }
 
 .scheme_side .sc_button_hover_style_hover.sc_button_hover_slide_right {

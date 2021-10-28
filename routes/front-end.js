@@ -11,9 +11,7 @@ router.get('/about-us', function (req, res, next) {
   res.render('about', { title: 'Express' });
 });
 /* GET home page. */
-router.get('/fashion-blogs', function (req, res, next) {
-  res.render('blog-achive', { title: 'Express' });
-});
+
 router.get('/blog/:id', function (req, res, next) {
   res.render('blog-detail', { title: 'Express', layout: 'layouts/full-page' });
 });
