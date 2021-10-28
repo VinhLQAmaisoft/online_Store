@@ -35,7 +35,7 @@
 
 <body>
     <div class="row">
-        <%-include("./components/header.ejs")%>
+        <%-include(". /components/header.ejs")%>
     </div>
     <div class="container">
         <div class="row">
@@ -442,7 +442,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="cc-number">Credit card number</label>
-                            <input type="text" class="form-control" id="cc-number" onkeyup="validateCard()" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-number" onkeyup="validateCard()"
+                                placeholder="" required>
                             <div class="invalid-feedback">
                                 Credit card number is required
                             </div>
@@ -458,8 +459,7 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="cc-expiration">CVC/CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" 
-                                placeholder="XXX" required>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="XXX" required>
                             <div class="invalid-feedback">
                                 Security code required
                             </div>
@@ -475,7 +475,7 @@
 
     </div>
     <div class="row">
-        <%-include('./components/footer.ejs')%>
+        <%-include('. /components/footer.ejs')%>
     </div>
     <style>
         .img-responsive {
@@ -546,7 +546,7 @@
         let discover = document.getElementById("discover-icon")
         function validateCard() {
             let cardNumber = document.getElementById('cc-number').value
-            console.log("CHECK NUMBER: ",cardNumber);
+            console.log("CHECK NUMBER: ", cardNumber);
             // check visa
             for (const number of isVisa) {
                 let prefix = number + ""
