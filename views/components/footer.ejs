@@ -96,11 +96,83 @@
 
 <script>
 
-  
+
     function buynow() {
-        window.location.href ='/checkout'
+        window.location.href = '/checkout'
 
     }
-
-
+    async function addToCart() {
+        let productId = document.getElementById("product-id").value;
+        let quantity = 1;
+        let color = document.getElementById("pa_color").value;
+        let size = document.getElementById("pa_size").value;
+        size = size != " " ? size : "m "
+        color = color != "" ? color : "red-passion"
+        console.log({
+            productId,
+            quantity,
+            color,
+            size
+        });
+        let response = await $.ajax({
+            url: "/api/cart",
+            method: "POST",
+            data: {
+                productId,
+                quantity,
+                color,
+                size
+            }
+        })
+        getCartData()
+    }
+    function addCartItem(cartItem) {
+        return `
+        <li class="mini_cart_item">
+        <a href="#" class="remove"
+    title="Remove this item">×</a>
+    <a href="/product/${cartItem.product}">
+        <img src="${cartItem.featureImage}"
+            alt="">Strapless Bikini Top
+        &amp; Bottom&nbsp;
+    </a>
+    <dl class="variation">
+        <dt class="variation-Size">Size:
+        </dt>
+        <dd class="variation-Size">
+            <p>${cartItem.size.toUpperCase()}</p>
+        </dd>
+        <dt class="variation-Color">Color:
+        </dt>
+        <dd class="variation-Color">
+            <p>${cartItem.color.replace('-', ' ').toUpperCase()}</p>
+        </dd>
+    </dl>
+        <span class="quantity">${cartItem.quantity} × <span
+            class="amount">${cartItem.price}.00<span
+                class="woocommerce-Price-currencySymbol">$</span></span>
+        </span>
+    </li>
+        `
+    }
+    async function getCartData() {
+        let response = await $.ajax({
+            method: "GET",
+            url: '/api/cart'
+        })
+        let cartDom = document.getElementById("cart-list")
+        let cartQuantity = document.getElementById("cart-quantity")
+        let cartSubtotal = document.getElementById("cart-subtotal")
+        cartDom, innerHTML = ""
+        console.log(response);
+        let subtotal = 0;
+        for (let i = 0; i < response.length; i++) {
+            const cartItem = response[i];
+            cartDom.innerHTML += addCartItem(cartItem)
+            subtotal += parseInt(cartItem.price) * parseInt(cartItem.quantity);
+        }
+        cartSubtotal.innerHTML = subtotal + ".00";
+        cartQuantity.innerHTML = response.length;
+    }
+    getCartData()
 </script>

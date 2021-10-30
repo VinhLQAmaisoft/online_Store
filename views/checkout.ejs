@@ -44,39 +44,11 @@
                     <span class="text-muted">Your cart</span>
                     <span class="badge badge-secondary badge-pill">3</span>
                 </h4>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Product name</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$12</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Second product</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$8</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Third item</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                        <div class="text-success">
-                            <h6 class="my-0">Promo code</h6>
-                            <small>EXAMPLECODE</small>
-                        </div>
-                        <span class="text-success">-$5</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$20</strong>
-                    </li>
+                <ul class="list-group mb-3" id="order-list">
+
+
+
+
                 </ul>
 
 
@@ -492,6 +464,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <!-- VALIDATION -->
     <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
             (function () {
@@ -515,6 +488,7 @@
             })();
 
     </script>
+    <!-- CHECKOUT -->
     <script>
         async function checkout() {
             console.log("TRIGGER");
@@ -598,6 +572,37 @@
             }
 
         }
+    </script>
+    <!-- GET CART DATA -->
+    <script>
+        async function getCart() {
+            let cartData = await $.ajax({
+                method: 'get',
+                url: '/api/cart'
+            })
+            console.log("AJAX DATA:",cartData)
+            let orderList = document.getElementById('order-list')
+            orderList.innerHTML = '';
+            let total = 0;
+            for (const item of cartData) {
+                orderList.innerHTML += `
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">${item.name}</h6>
+                            <small class="text-muted">Quantity: ${item.quantity}</small>
+                        </div>
+                        <span class="text-muted">$${item.price}</span>
+                    </li>`
+                total += parseInt(item.price) * parseInt(item.quantity)
+            }
+            orderList.innerHTML += `<li class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong id="total-price">${total}</strong>
+                    </li>`;
+        }
+getCart()
+
+
     </script>
     <style>
         .non-selected {

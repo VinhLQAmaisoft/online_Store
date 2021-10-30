@@ -8566,6 +8566,10 @@ a.inst_hover:hover {
 	line-height: 1.2em;
 }
 
+.post_data {
+	overflow: unset!important;
+}
+
 span.amount>.decimals::before {
 	content: "."
 }
@@ -8607,8 +8611,6 @@ span.amount>.decimals {
 	color: #fff!important;
 }
 
-
-
 .btn-buy-now {
 	color: #fff!important;
 	margin-right: 10px!important;
@@ -8621,7 +8623,11 @@ span.amount>.decimals {
 	background-color: #fff!important;
 }
 
+/*HIDE CART LIST SCROLL BAR */
 
+.cart_list::-webkit-scrollbar {
+	display: none;
+}
 
 /* Chỉnh footer */
 

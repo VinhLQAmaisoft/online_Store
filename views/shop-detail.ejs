@@ -52,42 +52,32 @@
 
                                         <a href="/images/product-19.jpg"
                                             class="yith_magnifier_zoom woocommerce-main-image" title="product-19">
-                                            <img src="/images/product-19-600x650.jpg" alt="" />
+                                            <img src="/images/<%=product.code%>-600x650.jpg" alt="" />
                                         </a>
                                         <div class="thumbnails noslider">
                                             <ul class="yith_magnifier_gallery">
-                                                <li class="yith_magnifier_thumbnail">
-                                                    <a href="/images/product-19.jpg" class="yith_magnifier_thumbnail"
-                                                        title="product-19" data-small="images/product-19-600x650.jpg">
-                                                        <img src="/images/product-19-180x180.jpg" alt="" />
-                                                    </a>
-                                                </li>
-                                                <li class="yith_magnifier_thumbnail">
-                                                    <a href="/images/product-17.jpg" class="yith_magnifier_thumbnail"
-                                                        title="product-17" data-small="images/product-17-600x650.jpg">
-                                                        <img src="/images/product-17-180x180.jpg" alt="" />
-                                                    </a>
-                                                </li>
-                                                <li class="yith_magnifier_thumbnail">
-                                                    <a href="/images/product-13.jpg" class="yith_magnifier_thumbnail"
-                                                        title="product-13" data-small="images/product-13-600x650.jpg">
-                                                        <img src="/images/product-13-180x180.jpg" alt="" />
-                                                    </a>
-                                                </li>
-                                                <li class="yith_magnifier_thumbnail">
-                                                    <a href="/images/product-15.jpg" class="yith_magnifier_thumbnail"
-                                                        title="product-15" data-small="images/product-15-600x650.jpg">
-                                                        <img src="/images/product-15-180x180.jpg" alt="" />
-                                                    </a>
-                                                </li>
+                                                <%for(let i=0; i < product.subImage.length;i++){ 
+                                                    let src=product.subImage[i]%>
+                                                    <li class="yith_magnifier_thumbnail">
+                                                        <a href="/images/product-19.jpg"
+                                                            class="yith_magnifier_thumbnail" title="product-19"
+                                                            data-small="images/product-19-600x650.jpg">
+                                                            <img src="<%=src%>" alt="" />
+                                                        </a>
+                                                    </li>
+                                                    <%}%>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="summary entry-summary">
-                                        <h1 class="product_title entry-title">Halter Bodysuit</h1>
+                                        <h1 class="product_title entry-title" id="product-name">
+                                            <%=product.name%>
+                                        </h1>
                                         <div class="woocommerce-product-rating">
                                             <div class="star-rating" title="Rated 5 out of 5">
-                                                <span class="w_100per"><strong class="rating">5</strong> out of
+                                                <span class="w_<%=(product.rating*20)%>per"><strong class="rating">
+                                                        <%=(product.rating)%>
+                                                    </strong> out of
                                                     <span>5</span> based on <span class="rating">1</span> customer
                                                     rating </span>
                                             </div>
@@ -97,22 +87,22 @@
 
                                         <div>
                                             <p class="price"><span class="woocs_price_code"><span
-                                                        class="woocommerce-Price-amount amount">53<span
-                                                            class="decimals">00</span><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                        class="woocommerce-Price-amount amount">59<span
-                                                            class="decimals">00</span><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span></span>
+                                                        class="woocommerce-Price-amount amount">
+                                                        <%=(product.priceMin)%><span class="decimals">00</span><span
+                                                                class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                    </span>&ndash;<span class="woocommerce-Price-amount amount">
+                                                        <%=(product.priceMax)%><span class="decimals">00</span><span
+                                                                class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                    </span>
                                                 </span>
                                             </p>
 
 
                                         </div>
                                         <div>
-                                            <p>Morbi tellus nisl, accumsan quis bibendum in, vulputate nec arcu.
-                                                Fusceeto purus tellus. Quisque neque mi, sollicitdin in nibh eget,
-                                                euismod blandituris Sed accumsan maximus fermentum. Pellentesque
-                                                leogranto tortor.</p>
+                                            <p>
+                                                <%=(product.shortDesc)%>
+                                            </p>
                                         </div>
 
                                         <form class="variations_form cart" method="post" enctype='multipart/form-data'
@@ -121,13 +111,13 @@
                                                 <tbody>
                                                     <tr>
                                                         <td class="label" style="display:inline"><label
-                                                                for="pa_size">Size</label></td>
+                                                                for="pa_size">Size:</label></td>
                                                         <td class="value">
                                                             <select id="pa_size" class="d_none-imp"
                                                                 name="attribute_pa_size"
                                                                 data-attribute_name="attribute_pa_size"
                                                                 data-show_option_none="yes">
-                                                                <option value=" ">Choose an option</option>
+                                                                <option value=" ">Choose an option </option>
                                                                 <option value="s ">S</option>
                                                                 <option value="m ">M</option>
                                                                 <option value="l ">L</option>
@@ -138,7 +128,7 @@
                                                                 data-attrib="pa_size ">
                                                                 <span
                                                                     class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip trx_addons_attrib_selected "
-                                                                    data-value=" " data-tooltip="Choose an option ">
+                                                                    data-value="" data-tooltip="Choose an option ">
                                                                     <span>Choose an option</span>
                                                                 </span>
                                                                 <span
@@ -224,7 +214,7 @@
 
                                     </div>
                                     <!-- .summary -->
-
+                                    <input type="hidden" value="<%=product.id%>" id="product-id">
                                     <div class="woocommerce-tabs sc_tabs">
                                         <ul class="tabs wc-tabs">
                                             <li class="description_tab">
@@ -249,16 +239,8 @@
                                                                 class="column_container column-1_1 sc_layouts_column_icons_position_left">
                                                                 <div class="column-inner">
                                                                     <div class="text_column">
-                                                                        <p>General Delivery Information. US Standard:
-                                                                            Within 3 working days &#8211; $5 or FREE
-                                                                            when you spend over $200 US Premium: Order
-                                                                            by 12pm Mon &#8211; Fri, for delivery the
-                                                                            next working day &#8211; $10 We also offer
-                                                                            the option to add a personalised gift
-                                                                            message if you are looking to treat that
-                                                                            certain someone. Simply choose the gift
-                                                                            message option at checkout and your message
-                                                                            will be presented on a branded pink card.
+                                                                        <p>
+                                                                            <%=product.desc%>
                                                                         </p>
                                                                     </div>
                                                                 </div>

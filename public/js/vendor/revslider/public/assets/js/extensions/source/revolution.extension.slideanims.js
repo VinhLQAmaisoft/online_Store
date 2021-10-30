@@ -659,7 +659,7 @@ var animateSlideIntern = function(nexttrans, comingtransition, container, nextli
 
 
 	////////////////////////////////////
-	// THE SLOTSZOOM - TRANSITION II. //
+	// THE SLOTSZOOM - TRANSITION II.//
 	////////////////////////////////////
 	if (nexttrans==7) {
 
@@ -712,7 +712,7 @@ var animateSlideIntern = function(nexttrans, comingtransition, container, nextli
 
 
 	////////////////////////////////////
-	// THE SLOTSZOOM - TRANSITION II. //
+	// THE SLOTSZOOM - TRANSITION II.//
 	////////////////////////////////////
 	if (nexttrans==8) {
 
