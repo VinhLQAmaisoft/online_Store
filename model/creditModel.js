@@ -5,8 +5,8 @@ var buffSchema = new Schema({
     // table gom cac thuoc tinh sau:
     name: String,
     number: Number,
-    exp: Number,
-    code: Number,
+    exp: String,
+    code: String,
 
 });
 //Model: tuong tac khi thuc hien lenh
