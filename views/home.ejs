@@ -1522,7 +1522,7 @@
             let cartDom = document.getElementById("cart-list")
             let cartQuantity = document.getElementById("cart-quantity")
             let cartSubtotal = document.getElementById("cart-subtotal")
-            cartDom, innerHTML = ""
+            cartDom.innerHTML = ""
             console.log(response);
             let subtotal = 0;
             for (let i = 0; i < response.length; i++) {
