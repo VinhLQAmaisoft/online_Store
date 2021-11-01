@@ -4,7 +4,12 @@ var router = express.Router();
 var model = require('../model/creditModel')
 const productData = require('../data/product.json')
 const discountData = require('../data/discount.json')
-    /* GET users listing. */
+for (let i = 0; i < productData.length; i++) {
+    const product = productData[i];
+    let discountValue = getDiscount(product.id);
+    productData[i].discount = discountValue
+}
+/* GET users listing. */
 router.post('/checkout', async function(req, res, next) {
     console.log("DATA: ", req.body)
     let name = req.body.name
@@ -23,11 +28,7 @@ router.post('/checkout', async function(req, res, next) {
 });
 // GET ALL PRODUCT
 router.get('/get-all-product', (req, res) => {
-        for (let i = 0; i < productData.length; i++) {
-            const product = productData[i];
-            let discountValue = getDiscount(product.id);
-            productData[i].discount = discountValue
-        }
+
         return res.json(productData)
     })
     // GET PRODUCT BY ID
