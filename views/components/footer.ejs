@@ -11,8 +11,7 @@
                     <div class="sc_content sc_content_default sc_float_center sc_align_center sc_content_width_1_1">
                         <div class="sc_content_container">
                             <div class="sc_layouts_item">
-                                <nav class="sc_layouts_menu sc_layouts_menu_default menu_hover_fade"
-                                    data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <nav class="sc_layouts_menu sc_layouts_menu_default menu_hover_fade" data-animation-in="fadeIn" data-animation-out="fadeOut">
                                     <ul id="menu_footer" class="sc_layouts_menu_nav menu_footer_nav">
                                         <li class="menu-item menu-item-home">
                                             <a href="index.html">
@@ -72,8 +71,7 @@
                             <div class="text_column">
                                 <div class="widget widget_text">
                                     <div class="textwidget">
-                                        <div class="fsz_13px fw_400">&copy;2017 Alice’s Lingerie Store. All Rights
-                                            Reserved. <a href="#">Terms of use</a> and <a href="#">Privacy Policy</a>
+                                        <div class="fsz_13px fw_400">&copy;2017 Alice’s Lingerie Store. All Rights Reserved. <a href="#">Terms of use</a> and <a href="#">Privacy Policy</a>
                                         </div>
                                     </div>
                                 </div>
@@ -95,8 +93,6 @@
 
 
 <script>
-
-
     function buynow() {
         window.location.href = '/checkout'
 
@@ -126,10 +122,11 @@
         })
         getCartData()
     }
-    function addCartItem(cartItem) {
+
+    function addCartItem(cartItem, index) {
         return `
         <li class="mini_cart_item">
-        <a href="#" class="remove"
+        <a href="#" class="remove" onclick="removeCartItem(${index})"
     title="Remove this item">×</a>
     <a href="/product/${cartItem.product}">
         <img src="${cartItem.featureImage}"
@@ -149,11 +146,21 @@
         </dd>
     </dl>
         <span class="quantity">${cartItem.quantity} × <span
-            class="amount">${cartItem.price}.00<span
+            class="amount">${cartItem.price}.99<span
                 class="woocommerce-Price-currencySymbol">$</span></span>
         </span>
     </li>
         `
+    }
+    async function removeCartItem(deleteIndex) {
+        await $.ajax({
+            url: '/api/delete-cart',
+            method: 'post',
+            data: {
+                deleteIndex: deleteIndex
+            }
+        })
+        await getCartData();
     }
     async function getCartData() {
         let response = await $.ajax({
@@ -168,7 +175,7 @@
         let subtotal = 0;
         for (let i = 0; i < response.length; i++) {
             const cartItem = response[i];
-            cartDom.innerHTML += addCartItem(cartItem)
+            cartDom.innerHTML += addCartItem(cartItem, i)
             subtotal += parseInt(cartItem.price) * parseInt(cartItem.quantity);
         }
         cartSubtotal.innerHTML = subtotal + ".00";
