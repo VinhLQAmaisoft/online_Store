@@ -1,8 +1,7 @@
-[
-    {
+[{
         "id": "01",
         "name": "Halter Bodysuit",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "53",
         "priceMax": "60",
@@ -22,7 +21,7 @@
     {
         "id": "02",
         "name": "Sexy Long Line Plunge Bra and Sexy Thong",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "52",
         "priceMax": "58",
@@ -42,7 +41,7 @@
     {
         "id": "03",
         "name": "Smooth Raw Cut Hiphugger",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "66",
         "priceMax": "72",
@@ -62,7 +61,7 @@
     {
         "id": "04",
         "name": "Strapless Bikini Top & Bottom",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "4",
         "priceMin": "59",
         "priceMax": "65",
@@ -82,7 +81,7 @@
     {
         "id": "05",
         "name": "Very Sexy Lace Teddy",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "17",
         "priceMax": "20",
@@ -102,7 +101,7 @@
     {
         "id": "06",
         "name": "Crochet Lace Triangle Bralette",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "4",
         "priceMin": "79",
         "priceMax": "85",
@@ -122,7 +121,7 @@
     {
         "id": "07",
         "name": "3-Piece Garter Belt Lace Strapless Set",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "4",
         "priceMin": "41",
         "priceMax": "47",
@@ -142,7 +141,7 @@
     {
         "id": "08",
         "name": "Victory Contour Hiphugger & Push Up",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "53",
         "priceMax": "56",
@@ -162,7 +161,7 @@
     {
         "id": "09",
         "name": "Daring Pretty Little Liars Push-Up Bra",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "4",
         "priceMin": "23",
         "priceMax": "29",
@@ -182,7 +181,7 @@
     {
         "id": "10",
         "name": "Illicit Lace & Convertible Demi Teddy",
-        "code":"product-19",
+        "code": "product-19",
         "rating": "5",
         "priceMin": "70",
         "priceMax": "76",

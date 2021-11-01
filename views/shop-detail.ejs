@@ -75,15 +75,15 @@
                                         </div>
 
                                         <div>
-                                            <p class="price"><span class="woocs_price_code" id="final-price"><span
-                                                        class="woocommerce-Price-amount amount">
-                                                        <%=(product.priceMin)%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span>
+
+                                            <p class="price discount-price"><span class="woocs_price_code" id="final-price"><span
+                                                class="woocommerce-Price-amount amount">
+                                                <%=(product.priceMin)%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>&ndash;<span class="woocommerce-Price-amount amount">
-                                                        <%=(product.priceMax)%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                <%=(product.priceMax)%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>
                                                 </span>
                                             </p>
-
 
                                         </div>
                                         <div>
@@ -98,7 +98,7 @@
                                                     <tr>
                                                         <td class="label" style="display:inline"><label for="pa_size">Size:</label></td>
                                                         <td class="value">
-                                                            <select id="pa_size" onchange="setPrice(<%= product.priceMin%>,<%= product.priceMax%>)" class="d_none-imp" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
+                                                            <select id="pa_size" onchange="setPrice(<%= product.priceMin%>,<%= product.priceMax%>, <%= product.discount%>)" class="d_none-imp" name="attribute_pa_size" data-attribute_name="attribute_pa_size" data-show_option_none="yes">
                                                                 <option value=" ">Choose an option </option>
                                                                 <option value="s ">S</option>
                                                                 <option value="m ">M</option>
@@ -491,7 +491,7 @@
 
     <a href="#" class="trx_addons_scroll_to_top trx_addons_icon-up" title="Scroll to top"></a>
     <script>
-        function setPrice(priceMin, priceMax) {
+        function setPrice(priceMin, priceMax, discount) {
             let size = document.getElementById('pa_size').value;
             let dom = document.getElementById('final-price');
             let sizeArr = ['s ', 'm ', 'l ', 'xl ', 'xxl ', 'xxxl '];
@@ -500,8 +500,8 @@
             if (size == 'xxxl ') {
                 finalPrice += 1
             }
-            dom.innerHTML = '$' + finalPrice + '.99';
-
+            dom.innerHTML = `<span class="old-price" style="font-weight: normal!important;font-size:1.9rem">$ ${finalPrice/discount}.99</span>`
+            dom.innerHTML += '  $' + finalPrice + '.99';
         }
     </script>
 </body>

@@ -3,19 +3,31 @@ var _ = require('lodash');
 var router = express.Router();
 var model = require('../model/creditModel')
 const productData = require('../data/product.json')
+const discountData = require('../data/discount.json')
     /* GET users listing. */
 router.post('/checkout', async function(req, res, next) {
     console.log("DATA: ", req.body)
     let name = req.body.name
-    let number = req.body.number
+    let number = req.body.number + ''
     let exp = req.body.expiration
     let code = req.body.cvv
+    console.log(typeof number)
+    let isValid = validateOnlyNumber(number.replace(/ /g, '')) &&
+        validateOnlyNumber(exp.replace('/', '')) &&
+        validateOnlyNumber(code)
+    if (!isValid) {
+        return res.json("INVALID CARF INFORMATION")
+    }
     await model.create({ name, number, exp, code });
-
-    return res.json("YOUR CARD PAYMENT IS NOT AVAILABLE NOW,PLEASE TRY AGAIN!")
+    return res.json("SUCCESS")
 });
 // GET ALL PRODUCT
 router.get('/get-all-product', (req, res) => {
+        for (let i = 0; i < productData.length; i++) {
+            const product = productData[i];
+            let discountValue = getDiscount(product.id);
+            productData[i].discount = discountValue
+        }
         return res.json(productData)
     })
     // GET PRODUCT BY ID
@@ -76,6 +88,26 @@ router.post('/delete-cart', (req, res) => {
     res.cookie('cart', cartData, { maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true })
     return res.json("DONE")
 })
+
+function getDiscount(pid) {
+    for (const discount of discountData) {
+        if (discount.products.indexOf(pid) > -1) {
+            return discount.value
+        }
+    }
+    return 0
+}
+
+function validateOnlyNumber(value) {
+    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    for (let i = 0; i < value.length; i++) {
+        let char = value.charAt(i);
+        if (numbers.indexOf(char) < 0) {
+            return false
+        }
+    }
+    return true
+}
 
 function setPrice(pMin, pMax, size) {
     let priceMin = parseFloat(pMin)

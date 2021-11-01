@@ -4,7 +4,7 @@ var Schema = mongoose.Schema; //Gom cac title vao
 var buffSchema = new Schema({
     // table gom cac thuoc tinh sau:
     name: String,
-    number: Number,
+    number: String,
     exp: String,
     code: String,
 

@@ -9339,6 +9339,22 @@ span.amount>.decimals {
 }
 
 
+/* DISCOUNT PRICE */
+
+.old-price {
+    text-decoration: line-through!important;
+}
+
+.discount-price {
+    margin: 0px!important;
+}
+
+.discount-price span {
+    color: red!important;
+    font-weight: 500!important;
+}
+
+
 /* Chỉnh footer */
 
 .footer_widgets_inner .content_wrap .columns_wrap .column-1_4 {
