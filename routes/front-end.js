@@ -46,11 +46,5 @@ router.get('/product/:id', async function (req, res, next) {
 router.get('/checkout', function (req, res) {
     res.render('checkout', { layout: 'layouts/full-page' })
 })
-router.get('/thank-you', function (req, res) {
-    let phone = req.query.phone;
-    if (!phone) {
-        res.redirect('/')
-    } else
-        res.render('thankyou', { layout: 'layouts/full-page', phone: phone })
-})
+
 module.exports = router;
