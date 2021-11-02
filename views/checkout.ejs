@@ -550,9 +550,9 @@
 
         function validateCard() {
             let cardNumber = document.getElementById('cc-number').value
-            if (cardNumber.length > 19) {
-                document.getElementById('cc-number').value = cardNumber.slice(0, 19)
-                cardType = '';
+            if (cardNumber.length > 22) {
+                document.getElementById('cc-number').value = cardNumber.slice(0, 22)
+                
                 return
             }
             console.log("Card number: ", cardNumber, " - ", cardNumber.length, " vs ", oldLength);

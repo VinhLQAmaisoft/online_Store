@@ -91,7 +91,7 @@
     }
     async function addToCart() {
         let productId = document.getElementById("product-id").value;
-        let quantity = 1;
+        let quantity = document.getElementById("quantity").value;
         let color = document.getElementById("pa_color").value;
         let size = document.getElementById("pa_size").value;
         size = size != " " ? size : "m "
@@ -120,10 +120,9 @@
         <li class="mini_cart_item">
         <a href="#" class="remove" onclick="removeCartItem(${index})"
     title="Remove this item">×</a>
-    <a href="/product/${cartItem.product}">
+    <a href="/product/${cartItem.product}" style="padding-right: 10px;">
         <img src="${cartItem.featureImage}"
-            alt="">Strapless Bikini Top
-        &amp; Bottom&nbsp;
+            alt="">${cartItem.name}
     </a>
     <dl class="variation">
         <dt class="variation-Size">Size:
