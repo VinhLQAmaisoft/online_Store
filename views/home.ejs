@@ -198,35 +198,66 @@
                                                     </div>
                                                     <div class="woocommerce columns-5">
                                                         <ul class="products wcspt-products">
+                                                            <%for(let i = 0;i < products.length;i++) { let product = products[i];%>
                                                             <li class="product type-product wcspt-has-gallery">
-                                                                <div class="post_item post_layout_thumbs">
+                                                                <div class="post_item post_layout_thumbs" style="position: relative;">
                                                                     <div class="post_featured hover_shop_buttons">
-                                                                        <a href="/product/123123" class="wcspt-img-link">
-                                                                            <img src="/images/product-19-300x410.jpg" alt="product-19" title="product-19" />
-                                                                            <img src="/images/product-17-300x410.jpg" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
+                                                                        <div class="discount-label green">
+                                                                            <span>
+                                                                                <%=product.discount*100%>%
+                                                                            </span>
+                                                                        </div>
+                                                                        <a href="/product/<%=product.id%>" class="wcspt-img-link">
+                                                                            <img src="<%=product.featureImage[0]%>" alt="product-15" title="<%=product.name%>" />
+                                                                            <img src="<%=product.featureImage[1]%>" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
                                                                         </a>
                                                                         <div class="mask"></div>
                                                                         <div class="icons">
-                                                                            <a href="/product/123123" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                                            <a href="/product/123123" class="shop_link button icon-link">Details</a>
+                                                                            <a href="/product/<%=product.id%>" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
+                                                                            <a href="/product/<%=product.id%>" class="shop_link button icon-link">Details</a>
                                                                         </div>
                                                                     </div>
                                                                     <!-- /.post_featured -->
                                                                     <div class="post_data">
                                                                         <div class="post_header entry-header">
-                                                                            <h3><a href="/product/123123">Halter
-                                                                                    Bodysuit</a></h3>
-                                                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong
-                                                                                        class="rating">5</strong> out of
-                                                                                    5</span></div>
+                                                                            <h3><a href="/product/<%=product.id%>"><%=product.name%></a></h3>
                                                                         </div>
                                                                         <!-- /.post_header -->
-                                                                        <span class="price">
-                                                                            <span class="woocs_price_code"><span
-                                                                                    class="amount">53<span
-                                                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;
-                                                                        <span class="amount">59<span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>
+                                                                        <div class="star-rating" title="Rated 5 out of 5"><span
+                                                                            class="w_<%=(product.rating*20)%>per"><strong
+                                                                                class="rating">
+                                                                                <%=product.rating%>>
+                                                                            </strong> out
+                                                                            of 5</span></div>
+                                                                            <!-- PRICE -->
+                                                                        <span class="price old-price">
+                                                                            <span class="woocs_price_code">
+                                                                                <span class="amount">
+                                                                                    <%=product.priceMin /product.discount%><span
+                                                                                            class="decimals">99</span><span
+                                                                                            class="woocommerce-Price-currencySymbol">$</span>
+                                                                                </span>–
+                                                                                <span class="amount">
+                                                                                    <%=product.priceMax / product.discount%><span
+                                                                                            class="decimals">99</span><span
+                                                                                            class="woocommerce-Price-currencySymbol">$</span>
+                                                                                </span>
+                                                                            </span>
                                                                         </span>
+                                                                        <!-- FINAL PRICE -->
+                                                                        <span class="price discount-price">
+                                                                            <span class="woocs_price_code">
+                                                                                <span class="amount">
+                                                                                    <%=product.priceMin %><span
+                                                                                            class="decimals">99</span><span
+                                                                                            class="woocommerce-Price-currencySymbol">$</span>
+                                                                                </span>–
+                                                                                <span class="amount">
+                                                                                    <%=product.priceMax %><span
+                                                                                            class="decimals">99</span><span
+                                                                                            class="woocommerce-Price-currencySymbol">$</span>
+                                                                                </span>
+                                                                            </span>
                                                                         </span>
                                                                         <a href="/product/123123" class="button product_type_variable add_to_cart_button" onclick="buynow()">Buy Now</a>
                                                                     </div>
@@ -234,145 +265,7 @@
                                                                 </div>
                                                                 <!-- /.post_item -->
                                                             </li>
-                                                            <li class="product type-product wcspt-has-gallery">
-                                                                <div class="post_item post_layout_thumbs">
-                                                                    <div class="post_featured hover_shop_buttons">
-                                                                        <a href="/product/123123" class="wcspt-img-link">
-                                                                            <img src="/images/product-16-300x410.jpg" alt="product-16" title="product-16" />
-                                                                            <img src="/images/product-15-300x410.jpg" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
-                                                                        </a>
-                                                                        <div class="mask"></div>
-                                                                        <div class="icons">
-                                                                            <a href="/product/123123" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                                            <a href="/product/123123" class="shop_link button icon-link">Details</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.post_featured -->
-                                                                    <div class="post_data">
-                                                                        <div class="post_header entry-header">
-                                                                            <h3><a href="/product/123123">Sexy Long Line
-                                                                                    Plunge Bra and Sexy Thong</a></h3>
-                                                                        </div>
-                                                                        <!-- /.post_header -->
-                                                                        <span class="price">
-                                                                            <span class="woocs_price_code"><span
-                                                                                    class="amount">52<span
-                                                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;
-                                                                        <span class="amount">58<span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                                        </span>
-                                                                        </span>
-                                                                        <a href="/product/123123" class="button product_type_variable add_to_cart_button" onclick="buynow()">Buy Now</a>
-                                                                    </div>
-                                                                    <!-- /.post_data -->
-                                                                </div>
-                                                                <!-- /.post_item -->
-                                                            </li>
-                                                            <li class="product type-product wcspt-has-gallery">
-                                                                <div class="post_item post_layout_thumbs">
-                                                                    <div class="post_featured hover_shop_buttons">
-                                                                        <a href="/product/123123" class="wcspt-img-link">
-                                                                            <img src="/images/product-11-300x410.jpg" alt="product-11" title="product-11" />
-                                                                            <img src="/images/product-12-300x410.jpg" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
-                                                                        </a>
-                                                                        <div class="mask"></div>
-                                                                        <div class="icons">
-                                                                            <a href="/product/123123" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                                            <a href="/product/123123" class="shop_link button icon-link">Details</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.post_featured -->
-                                                                    <div class="post_data">
-                                                                        <div class="post_header entry-header">
-                                                                            <h3><a href="/product/123123">Smooth Raw Cut
-                                                                                    Hiphugger</a></h3>
-                                                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong
-                                                                                        class="rating">5</strong> out of
-                                                                                    5</span></div>
-                                                                        </div>
-                                                                        <!-- /.post_header -->
-                                                                        <span class="price">
-                                                                            <span class="woocs_price_code"><span
-                                                                                    class="amount">66<span
-                                                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;
-                                                                        <span class="amount">72<span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                                        </span>
-                                                                        </span>
-                                                                        <a href="/product/123123" class="button product_type_variable add_to_cart_button" onclick="buynow()">Buy Now</a>
-                                                                    </div>
-                                                                    <!-- /.post_data -->
-                                                                </div>
-                                                                <!-- /.post_item -->
-                                                            </li>
-                                                            <li class="product type-product wcspt-has-gallery">
-                                                                <div class="post_item post_layout_thumbs">
-                                                                    <div class="post_featured hover_shop_buttons">
-                                                                        <a href="/product/123123" class="wcspt-img-link">
-                                                                            <img src="/images/product-18-300x410.jpg" alt="product-18" title="product-18" />
-                                                                            <img src="/images/product-19-300x410.jpg" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
-                                                                        </a>
-                                                                        <div class="mask"></div>
-                                                                        <div class="icons">
-                                                                            <a href="/product/123123" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                                            <a href="/product/123123" class="shop_link button icon-link">Details</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.post_featured -->
-                                                                    <div class="post_data">
-                                                                        <div class="post_header entry-header">
-                                                                            <h3><a href="/product/123123">Strapless
-                                                                                    Bikini
-                                                                                    Top &#038; Bottom</a></h3>
-                                                                            <div class="star-rating" title="Rated 4 out of 5"><span class="w_80per"><strong
-                                                                                        class="rating">4</strong> out of
-                                                                                    5</span></div>
-                                                                        </div>
-                                                                        <!-- /.post_header -->
-                                                                        <span class="price">
-                                                                            <span class="woocs_price_code"><span
-                                                                                    class="amount">59<span
-                                                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;
-                                                                        <span class="amount">65<span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                                        </span>
-                                                                        </span>
-                                                                        <a href="/product/123123" class="button product_type_variable add_to_cart_button" onclick="buynow()">Buy Now</a>
-                                                                    </div>
-                                                                    <!-- /.post_data -->
-                                                                </div>
-                                                                <!-- /.post_item -->
-                                                            </li>
-                                                            <li class="product type-product wcspt-has-gallery">
-                                                                <div class="post_item post_layout_thumbs">
-                                                                    <div class="post_featured hover_shop_buttons">
-                                                                        <a href="/product/123123" class="wcspt-img-link">
-                                                                            <img src="/images/product-15-300x410.jpg" alt="product-15" title="product-15" />
-                                                                            <img src="/images/product-13-300x410.jpg" class="secondary-thumb wcspt-transition wcspt-ie8-tempfix" alt="" />
-                                                                        </a>
-                                                                        <div class="mask"></div>
-                                                                        <div class="icons">
-                                                                            <a href="/product/123123" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                                            <a href="/product/123123" class="shop_link button icon-link">Details</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- /.post_featured -->
-                                                                    <div class="post_data">
-                                                                        <div class="post_header entry-header">
-                                                                            <h3><a href="/product/123123">Crochet Lace
-                                                                                    Triangle Bralette</a></h3>
-                                                                        </div>
-                                                                        <!-- /.post_header -->
-                                                                        <span class="price">
-                                                                            <span class="woocs_price_code"><span
-                                                                                    class="amount">79<span
-                                                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;
-                                                                        <span class="amount">85<span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                                        </span>
-                                                                        </span>
-                                                                        <a href="/product/123123" class="button product_type_variable add_to_cart_button" onclick="buynow()">Buy Now</a>
-                                                                    </div>
-                                                                    <!-- /.post_data -->
-                                                                </div>
-                                                                <!-- /.post_item -->
-                                                            </li>
+                                                            <%}%>
                                                         </ul>
                                                     </div>
                                                 </div>

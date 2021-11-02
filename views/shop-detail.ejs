@@ -41,8 +41,12 @@
                                 </nav>
 
                                 <div class="product type-product wcspt-has-gallery">
-                                    <div class="images">
-
+                                    <div class="images" style="position: relative;">
+                                        <div class="discount-label green">
+                                            <span>
+                                                <%=product.discount*100%>%
+                                            </span>
+                                        </div>
                                         <a href="/images/product-19.jpg" class="yith_magnifier_zoom woocommerce-main-image" title="product-19">
                                             <img src="/images/<%=product.code%>-600x650.jpg" alt="" />
                                         </a>

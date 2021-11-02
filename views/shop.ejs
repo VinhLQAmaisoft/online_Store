@@ -8,39 +8,45 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="images/cropped-512x512-90x90.png" sizes="32x32" />
     <link rel='stylesheet' href='css/fontello/css/fontello-embedded.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/vendor/wc-secondary-product-thumbnail/assets/css/style.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/vendor/wc-secondary-product-thumbnail/assets/css/style.min.css' type='text/css'
+        media='all' />
     <link rel='stylesheet' href='js/vendor/woocommerce/assets/css/woocommerce-layout.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/vendor/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' href='js/vendor/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css'
+        media='only screen and (max-width: 768px)' />
     <link rel='stylesheet' href='js/vendor/woocommerce/assets/css/woocommerce.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/shortcodes.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
     <link rel='stylesheet' href='js/vendor/theme.hovers/theme.hovers.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/vendor/woocommerce-currency-switcher/js/chosen/chosen.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/vendor/woocommerce-currency-switcher/js/chosen/chosen.min.css' type='text/css'
+        media='all' />
     <link rel='stylesheet' href='js/vendor/woocommerce-currency-switcher/css/front.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/template-color.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/woocommerce.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/responsive.css' type='text/css' media='all' />
 </head>
 
-<body class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page scheme_default blog_mode_shop body_style_wide blog_style_excerpt sidebar_show sidebar_left no_layout">
+<body
+    class="archive post-type-archive post-type-archive-product woocommerce woocommerce-page scheme_default blog_mode_shop body_style_wide blog_style_excerpt sidebar_show sidebar_left no_layout">
     <div class="body_wrap">
         <div class="page_wrap">
             <%-include('./components/header.ejs')%>
-
                 <div class="page_content_wrap scheme_default">
                     <div class="content_wrap">
                         <div class="content">
                             <div class="list_products shop_mode_thumbs">
                                 <div class="list_products_header">
-                                    <nav class="woocommerce-breadcrumb"><a href="index.html">Home</a>&nbsp;&#47;&nbsp;Shop</nav>
+                                    <nav class="woocommerce-breadcrumb"><a
+                                            href="index.html">Home</a>&nbsp;&#47;&nbsp;Shop</nav>
                                     <h1 class="page-title">Shop</h1>
                                 </div>
                                 <!-- /.list_products_header -->
                                 <div class="alices_shop_mode_buttons">
                                     <form action="#" method="post">
                                         <input type="hidden" name="alices_shop_mode" value="thumbs" />
-                                        <a href="#" class="woocommerce_thumbs icon-th" title="Show products as thumbs"></a>
-                                        <a href="#" class="woocommerce_list icon-th-list" title="Show products as list"></a>
+                                        <a href="#" class="woocommerce_thumbs icon-th"
+                                            title="Show products as thumbs"></a>
+                                        <a href="#" class="woocommerce_list icon-th-list"
+                                            title="Show products as list"></a>
                                     </form>
                                 </div>
                                 <!-- /.alices_shop_mode_buttons -->
@@ -58,9 +64,14 @@
                                 </form>
                                 <ul class="products wcspt-products">
 
-                                    <% for (let i=0; i < productList.length; i++) { const product = productList[i];%>
+                                    <% for (let i=0; i < productList.length; i++) { const product=productList[i];%>
                                         <li class="product column-1_4 wcspt-has-gallery">
-                                            <div class="post_item post_layout_thumbs">
+                                            <div class="post_item post_layout_thumbs" style="position: relative;">
+                                                <div class="discount-label green">
+                                                    <span>
+                                                        <%=product.discount*100%>%
+                                                    </span>
+                                                </div>
                                                 <div class="post_featured hover_shop_buttons">
                                                     <a href="/product/<%=product.id%>" class="wcspt-img-link">
                                                         <img src="<%=product.featureImage[0]%>" alt="product-19"
@@ -70,8 +81,11 @@
                                                     </a>
                                                     <div class="mask"></div>
                                                     <div class="icons">
-                                                        <a href="/product/<%=product.id%>" class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable" onclick="buynow()">Buy Now</a>
-                                                        <a href="/product/<%=product.id%>" class="shop_link button icon-link">Details</a>
+                                                        <a href="/product/<%=product.id%>"
+                                                            class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
+                                                            onclick="buynow()">Buy Now</a>
+                                                        <a href="/product/<%=product.id%>"
+                                                            class="shop_link button icon-link">Details</a>
                                                     </div>
                                                 </div>
                                                 <!-- /.post_featured -->
@@ -82,29 +96,47 @@
                                                                 <%=product.name%>
                                                             </a>
                                                         </h3>
-                                                        <div class="star-rating" title="Rated 5 out of 5"><span class="w_<%=(product.rating*20)%>per"><strong class="rating"><%=product.rating%>></strong> out
+                                                        <div class="star-rating" title="Rated 5 out of 5"><span
+                                                                class="w_<%=(product.rating*20)%>per"><strong
+                                                                    class="rating">
+                                                                    <%=product.rating%>>
+                                                                </strong> out
                                                                 of 5</span></div>
                                                     </div>
                                                     <!-- /.post_header -->
                                                     <!-- ORIGIN PRICE -->
                                                     <span class="price old-price">
                                                         <span class="woocs_price_code">
-                                                            <span
-                                                                class="amount"><%=product.priceMin/product.discount%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">$</span></span>–
-                                                    <span class="amount">
-                                                           <%=product.priceMax / product.discount%><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">$</span></span>
-                                                    </span>
+                                                            <span class="amount">
+                                                                <%=product.priceMin /product.discount%><span
+                                                                        class="decimals">99</span><span
+                                                                        class="woocommerce-Price-currencySymbol">$</span>
+                                                            </span>–
+                                                            <span class="amount">
+                                                                <%=product.priceMax / product.discount%><span
+                                                                        class="decimals">99</span><span
+                                                                        class="woocommerce-Price-currencySymbol">$</span>
+                                                            </span>
+                                                        </span>
                                                     </span>
                                                     <!-- FINAL PRICE -->
-                                                    <span class="price discount-price"> 
+                                                    <span class="price discount-price">
                                                         <span class="woocs_price_code">
-                                                            <span
-                                                                class="amount"><%=product.priceMin %><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">$</span></span>–
-                                                    <span class="amount">
-                                                           <%=product.priceMax %><span class="decimals">99</span><span class="woocommerce-Price-currencySymbol">$</span></span>
+                                                            <span class="amount">
+                                                                <%=product.priceMin %><span
+                                                                        class="decimals">99</span><span
+                                                                        class="woocommerce-Price-currencySymbol">$</span>
+                                                            </span>–
+                                                            <span class="amount">
+                                                                <%=product.priceMax %><span
+                                                                        class="decimals">99</span><span
+                                                                        class="woocommerce-Price-currencySymbol">$</span>
+                                                            </span>
+                                                        </span>
                                                     </span>
-                                                    </span>
-                                                    <a href="/product/<%=product.id%>" class="button product_type_variable add_to_cart_button sc_button_hover_slide_left" onclick="buynow()">Buy Now</a>
+                                                    <a href="/product/<%=product.id%>"
+                                                        class="button product_type_variable add_to_cart_button sc_button_hover_slide_left"
+                                                        onclick="buynow()">Buy Now</a>
                                                 </div>
                                                 <!-- /.post_data -->
                                             </div>
@@ -134,10 +166,13 @@
                                         <div class="price_slider_wrapper">
                                             <div class="price_slider d_none"></div>
                                             <div class="price_slider_amount">
-                                                <input type="text" id="min_price" name="min_price" value="" data-min="13" placeholder="Min price" />
-                                                <input type="text" id="max_price" name="max_price" value="" data-max="85" placeholder="Max price" />
+                                                <input type="text" id="min_price" name="min_price" value=""
+                                                    data-min="13" placeholder="Min price" />
+                                                <input type="text" id="max_price" name="max_price" value=""
+                                                    data-max="85" placeholder="Max price" />
                                                 <button type="submit" class="button">Filter</button>
-                                                <div class="price_label d_none"> Price: <span class="from"></span> &mdash; <span class="to"></span> </div>
+                                                <div class="price_label d_none"> Price: <span class="from"></span>
+                                                    &mdash; <span class="to"></span> </div>
                                                 <div class="clear"></div>
                                             </div>
                                         </div>
@@ -171,7 +206,8 @@
                                 <aside class="widget woocommerce widget_product_search">
                                     <h5 class="widget_title">Search</h5>
                                     <form role="search" method="get" class="search_form" action="#">
-                                        <input type="text" class="search_field" placeholder="Search for products &hellip;" value="" name="s" />
+                                        <input type="text" class="search_field"
+                                            placeholder="Search for products &hellip;" value="" name="s" />
                                         <button class="search_button" type="submit">Search</button>
                                         <input type="hidden" name="post_type" value="product" />
                                     </form>
@@ -184,12 +220,15 @@
                                                 <img src="images/product-19-180x180.jpg" alt="" />
                                                 <span class="product-title">Halter Bodysuit</span>
                                             </a>
-                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong class="rating">5</strong> out of 5</span>
+                                            <div class="star-rating" title="Rated 5 out of 5"><span
+                                                    class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">53<span
-                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span class="amount">59<span class="decimals">99</span>
-                                            <span class="woocommerce-Price-currencySymbol">&#36;</span>
-                                            </span>
+                                                        class="decimals">99</span><span
+                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
+                                                    class="amount">59<span class="decimals">99</span>
+                                                    <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                </span>
                                             </span>
                                         </li>
                                         <li>
@@ -197,12 +236,15 @@
                                                 <img src="images/product-11-180x180.jpg" alt="" />
                                                 <span class="product-title">Smooth Raw Cut Hiphugger</span>
                                             </a>
-                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong class="rating">5</strong> out of 5</span>
+                                            <div class="star-rating" title="Rated 5 out of 5"><span
+                                                    class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">66<span
-                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span class="amount">72<span class="decimals">99</span>
-                                            <span class="woocommerce-Price-currencySymbol">&#36;</span>
-                                            </span>
+                                                        class="decimals">99</span><span
+                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
+                                                    class="amount">72<span class="decimals">99</span>
+                                                    <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                </span>
                                             </span>
                                         </li>
                                         <li>
@@ -211,12 +253,15 @@
                                                 <span class="product-title">Victory Contour Hiphugger &amp; Push Up
                                                     Bra</span>
                                             </a>
-                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong class="rating">5</strong> out of 5</span>
+                                            <div class="star-rating" title="Rated 5 out of 5"><span
+                                                    class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">53<span
-                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span class="amount">56<span class="decimals">99</span>
-                                            <span class="woocommerce-Price-currencySymbol">&#36;</span>
-                                            </span>
+                                                        class="decimals">99</span><span
+                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
+                                                    class="amount">56<span class="decimals">99</span>
+                                                    <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                </span>
                                             </span>
                                         </li>
                                         <li>
@@ -224,12 +269,15 @@
                                                 <img src="images/product-2-180x180.jpg" alt="" />
                                                 <span class="product-title">Libertine Obsession High Bikinis</span>
                                             </a>
-                                            <div class="star-rating" title="Rated 5 out of 5"><span class="w_100per"><strong class="rating">5</strong> out of 5</span>
+                                            <div class="star-rating" title="Rated 5 out of 5"><span
+                                                    class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">16<span
-                                                        class="decimals">99</span><span class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span class="amount">22<span class="decimals">99</span>
-                                            <span class="woocommerce-Price-currencySymbol">&#36;</span>
-                                            </span>
+                                                        class="decimals">99</span><span
+                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
+                                                    class="amount">22<span class="decimals">99</span>
+                                                    <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                </span>
                                             </span>
                                         </li>
                                     </ul>
@@ -261,7 +309,8 @@
         <div id="trx_addons_login_content" class="trx_addons_tabs_content trx_addons_login_content">
             <div>
                 <div class="trx_addons_popup_form_wrap trx_addons_popup_form_wrap_login">
-                    <form class="trx_addons_popup_form trx_addons_popup_form_login sc_input_hover_iconed" action="#" method="post" name="trx_addons_login_form">
+                    <form class="trx_addons_popup_form trx_addons_popup_form_login sc_input_hover_iconed" action="#"
+                        method="post" name="trx_addons_login_form">
                         <input type="hidden" id="redirect_to" name="redirect_to" value="">
                         <div class="trx_addons_popup_form_field trx_addons_popup_form_field_login">
                             <label class="sc_form_field sc_form_field_log required">
@@ -309,7 +358,8 @@
     <script type='text/javascript' src='js/custom/_init.js'></script>
     <script type='text/javascript' src='js/vendor/theme.hovers/theme.hovers.js'></script>
     <script type='text/javascript' src='js/vendor/price-slider.min.js'></script>
-    <script type='text/javascript' src='js/vendor/woocommerce-currency-switcher/js/chosen/chosen.jquery.min.js'></script>
+    <script type='text/javascript'
+        src='js/vendor/woocommerce-currency-switcher/js/chosen/chosen.jquery.min.js'></script>
     <script type='text/javascript' src='js/vendor/woocommerce-currency-switcher/js/front.js'></script>
 
     <a href="#" class="trx_addons_scroll_to_top trx_addons_icon-up" title="Scroll to top"></a>
