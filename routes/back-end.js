@@ -112,13 +112,8 @@ function validateOnlyNumber(value) {
 
 function setPrice(pMin, pMax, size) {
     let priceMin = parseFloat(pMin)
-    let priceMax = parseFloat(pMax)
-    let sizeArr = ['s ', 'm ', 'l ', 'xl ', 'xxl ', 'xxxl '];
-    let steps = parseFloat(priceMax - priceMin) / parseFloat(sizeArr.length)
-    let finalPrice = priceMin + parseFloat((sizeArr.indexOf(size) * steps).toFixed(0));
-    if (size == 'xxxl ') {
-        finalPrice += 1
-    }
-    return finalPrice
+    let realSize = size.split('|');
+    let finalPrice = priceMin * parseInt(realSize[0]);
+    return finalPrice 
 }
 module.exports = router;

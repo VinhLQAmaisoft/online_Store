@@ -54,18 +54,17 @@
                                                 <%=product.discount*100%>%
                                             </span>
                                         </div>
-                                        <a href="/images/product-19.jpg"
+                                        <a href="<%=product.featureImage[0]%>"
                                             class="yith_magnifier_zoom woocommerce-main-image" title="product-19">
-                                            <img src="/images/<%=product.code%>-600x650.jpg" alt="" />
+                                            <img src="<%=product.featureImage[0]%>" alt="" />
                                         </a>
                                         <div class="thumbnails noslider">
                                             <ul class="yith_magnifier_gallery">
                                                 <%for(let i=0; i < product.subImage.length;i++){ let
                                                     src=product.subImage[i]%>
                                                     <li class="yith_magnifier_thumbnail">
-                                                        <a href="/images/product-19.jpg"
-                                                            class="yith_magnifier_thumbnail" title="product-19"
-                                                            data-small="images/product-19-600x650.jpg">
+                                                        <a href="<%=src%>" class="yith_magnifier_thumbnail"
+                                                            title="product-19" data-small="<%=src%>">
                                                             <img src="<%=src%>" alt="" />
                                                         </a>
                                                     </li>
@@ -122,13 +121,12 @@
                                                                 class="d_none-imp" name="attribute_pa_size"
                                                                 data-attribute_name="attribute_pa_size"
                                                                 data-show_option_none="yes">
+                                                                <!-- VALUE: so-luong-goc|so-luong-cuoi -->
                                                                 <option value=" ">Choose an option </option>
-                                                                <option value="s ">S</option>
-                                                                <option value="m " selected>M</option>
-                                                                <option value="l ">L</option>
-                                                                <option value="xl ">XL</option>
-                                                                <option value="xxl ">2XL</option>
-                                                                <option value="xxxl ">3XL</option>
+                                                                <option value="1|1 ">Buy 1</option>
+                                                                <option value="2|2 " selected>M</option>
+                                                                <option value="3|4 ">L</option>
+                                                                <option value="5|7 ">2XL</option>
                                                             </select>
                                                             <div id="pa_size_attrib_extended"
                                                                 class="pa_size_attrib_extended trx_addons_attrib_extended "
@@ -140,38 +138,32 @@
                                                                 </span>
                                                                 <span
                                                                     class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="s " data-tooltip="S ">
-                                                                    <span>S</span>
+                                                                    data-value="1|1 " data-tooltip="Buy 1 ">
+                                                                    <span>Buy 1</span>
                                                                 </span>
                                                                 <span
                                                                     class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="m " data-tooltip="M ">
-                                                                    <span>M</span>
+                                                                    data-value="2|2 "
+                                                                    data-tooltip="Buy 2 Free Shipping ">
+                                                                    <span>Buy 2 Free Shipping</span>
                                                                 </span>
                                                                 <span
                                                                     class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="l " data-tooltip="L ">
-                                                                    <span>L</span>
+                                                                    data-value="3|4 "
+                                                                    data-tooltip="Buy 3 Get 1 Free(4packs) ">
+                                                                    <span>Buy 3 Get 1 Free(4packs)</span>
                                                                 </span>
                                                                 <span
                                                                     class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="xl " data-tooltip="XL ">
-                                                                    <span>XL</span>
-                                                                </span>
-                                                                <span
-                                                                    class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="xxl " data-tooltip="XXL ">
-                                                                    <span>2XL</span>
-                                                                </span>
-                                                                <span
-                                                                    class="trx_addons_attrib_item trx_addons_attrib_button trx_addons_tooltip "
-                                                                    data-value="xxxl " data-tooltip="XXXL ">
-                                                                    <span>3XL</span>
+                                                                    data-value="5|7 "
+                                                                    data-tooltip="Buy 5 Get 2 Free(7packs) ">
+                                                                    <span>Buy 5 Get 2 Free(7packs)</span>
                                                                 </span>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+
+                                                    <tr style="display:none">
                                                         <td class="label " style="display:inline"><label
                                                                 for="pa_color">Color</label></td>
                                                         <td class="value ">
@@ -180,7 +172,8 @@
                                                                 data-attribute_name="attribute_pa_color"
                                                                 data-show_option_none="yes">
                                                                 <option value="">Choose an option</option>
-                                                                <option value="gentle-peach" selected="selected">Gentle Peach</option>
+                                                                <option value="None" selected="selected">Gentle Peach
+                                                                </option>
                                                                 <option value="red-passion">Red Passion</option>
                                                                 <option value="valiant-violet">Valiant Violet</option>
                                                             </select>
@@ -218,7 +211,9 @@
                                                                 for="pa_size">Quantity:</label></td>
                                                         <td class="value">
                                                             <div class="col-lg-2">
-                                                               <input type="number" name="" id="quantity" min="1" value="1" style="width: 60px;padding: 10px;color:black">
+                                                                <input type="number" name="" id="quantity" min="1"
+                                                                    value="1"
+                                                                    style="width: 60px;padding: 10px;color:black">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -420,194 +415,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="related products">
-                                        <h2>Related Products</h2>
-                                        <ul class="products">
-                                            <li class="product type-product column-1_4 wcspt-has-gallery">
-                                                <div class="post_item post_layout_thumbs">
-                                                    <div class="post_featured hover_shop_buttons">
-                                                        <a href="#">
-                                                            <img src="/images/product-8-300x410.jpg" alt="product-8"
-                                                                title="product-8" />
-                                                            <img src="/images/product-7-300x410.jpg"
-                                                                class="secondary-thumb wcspt-transition wcspt-ie8-tempfix"
-                                                                alt="" />
-                                                        </a>
-                                                        <div class="mask"></div>
-                                                        <div class="icons">
-                                                            <a rel="nofollow" href="#"
-                                                                class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
-                                                                onclick="buynow()">Buy Now</a><a href="#"
-                                                                class="shop_link button icon-link">Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.post_featured -->
-                                                    <div class="post_data">
-                                                        <div class="post_header entry-header">
-                                                            <h3><a href="#">Convertible Longline Strapless Corset</a>
-                                                            </h3>
-                                                            <div class="star-rating" title="Rated 4 out of 5"><span
-                                                                    class="w_80per"><strong class="rating">4</strong>
-                                                                    out of 5</span></div>
-                                                        </div>
-                                                        <!-- /.post_header -->
 
-                                                        <span class="price">
-                                                            <span class="woocs_price_code"><span class="amount">39<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                                    class="amount">49<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                            </span>
-                                                        </span>
-                                                        <a href="#"
-                                                            class="button product_type_variable add_to_cart_button"
-                                                            onclick="buynow()">Buy Now</a>
-                                                    </div>
-                                                    <!-- /.post_data -->
-                                                </div>
-                                                <!-- /.post_item -->
-                                            </li>
-
-
-                                            <li class="product type-produc column-1_4 wcspt-has-gallery">
-                                                <div class="post_item post_layout_thumbs">
-                                                    <div class="post_featured hover_shop_buttons">
-                                                        <a href="#">
-                                                            <img src="/images/product-1-300x410.jpg" alt="product-1"
-                                                                title="product-1" />
-                                                            <img src="/images/product-6-300x410.jpg"
-                                                                class="secondary-thumb wcspt-transition wcspt-ie8-tempfix"
-                                                                alt="" />
-                                                        </a>
-                                                        <div class="mask"></div>
-                                                        <div class="icons">
-                                                            <a href="#"
-                                                                class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
-                                                                onclick="buynow()">Buy Now</a><a href="#"
-                                                                class="shop_link button icon-link">Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.post_featured -->
-                                                    <div class="post_data">
-                                                        <div class="post_header entry-header">
-                                                            <h3><a href="#">Very Sexy Lace Teddy</a></h3>
-                                                            <div class="star-rating" title="Rated 4 out of 5"><span
-                                                                    class="w_80per"><strong class="rating">4</strong>
-                                                                    out of 5</span></div>
-                                                        </div>
-                                                        <!-- /.post_header -->
-
-                                                        <span class="price">
-                                                            <span class="woocs_price_code"><span class="amount">17<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                                    class="amount">20<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                            </span>
-                                                        </span>
-                                                        <a href="#"
-                                                            class="button product_type_variable add_to_cart_button"
-                                                            onclick="buynow()">Buy Now</a>
-                                                    </div>
-                                                    <!-- /.post_data -->
-                                                </div>
-                                                <!-- /.post_item -->
-                                            </li>
-
-
-                                            <li class="product type-product column-1_4 wcspt-has-gallery">
-                                                <div class="post_item post_layout_thumbs">
-                                                    <div class="post_featured hover_shop_buttons">
-                                                        <a href="#">
-                                                            <img src="/images/product-5-300x410.jpg" alt="product-5"
-                                                                title="product-5" />
-                                                            <img src="/images/product-4-300x410.jpg"
-                                                                class="secondary-thumb wcspt-transition wcspt-ie8-tempfix"
-                                                                alt="" /> </a>
-                                                        <div class="mask"></div>
-                                                        <div class="icons">
-                                                            <a href="#"
-                                                                class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
-                                                                onclick="buynow()">Buy Now</a><a href="#"
-                                                                class="shop_link button icon-link">Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.post_featured -->
-                                                    <div class="post_data">
-                                                        <div class="post_header entry-header">
-                                                            <h3><a href="#">Heart&#8217;s Desire 2-piece Set</a></h3>
-                                                            <div class="star-rating" title="Rated 3 out of 5"><span
-                                                                    class="w_60per"><strong class="rating">3</strong>
-                                                                    out of 5</span></div>
-                                                        </div>
-                                                        <!-- /.post_header -->
-
-                                                        <span class="price">
-                                                            <span class="woocs_price_code"><span class="amount">36<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                                    class="amount">45<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                            </span>
-                                                        </span>
-                                                        <a href="#"
-                                                            class="button product_type_variable add_to_cart_button"
-                                                            onclick="buynow()">Buy Now</a>
-                                                    </div>
-                                                    <!-- /.post_data -->
-                                                </div>
-                                                <!-- /.post_item -->
-                                            </li>
-                                            <li class="product type-product column-1_4 wcspt-has-gallery">
-                                                <div class="post_item post_layout_thumbs">
-                                                    <div class="post_featured hover_shop_buttons">
-                                                        <a href="#">
-                                                            <img src="/images/product-2-300x410.jpg" alt="product-2"
-                                                                title="product-2" />
-                                                            <img src="/images/product-7-300x410.jpg"
-                                                                class="secondary-thumb wcspt-transition wcspt-ie8-tempfix"
-                                                                alt="" />
-                                                        </a>
-                                                        <div class="mask"></div>
-                                                        <div class="icons">
-                                                            <a href="#"
-                                                                class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
-                                                                onclick="buynow()">Buy Now</a><a href="#"
-                                                                class="shop_link button icon-link">Details</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.post_featured -->
-                                                    <div class="post_data">
-                                                        <div class="post_header entry-header">
-                                                            <h3><a href="#">Hot Pink Bikini Top Swim Suit</a></h3>
-                                                        </div>
-                                                        <!-- /.post_header -->
-
-                                                        <span class="price">
-                                                            <span class="woocs_price_code"><span class="amount">22<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                                    class="amount">25<span
-                                                                        class="decimals">99</span><span
-                                                                        class="woocommerce-Price-currencySymbol">&#36;</span></span>
-                                                            </span>
-                                                        </span>
-                                                        <a href="#"
-                                                            class="button product_type_variable add_to_cart_button"
-                                                            onclick="buynow()">Buy Now</a>
-                                                    </div>
-                                                    <!-- /.post_data -->
-                                                </div>
-                                                <!-- /.post_item -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- #product-->
+                                    <!-- #product-->
                             </article>
                             <!-- /.post_item_single -->
                         </div>
@@ -645,16 +454,15 @@
     <a href="#" class="trx_addons_scroll_to_top trx_addons_icon-up" title="Scroll to top"></a>
     <script>
         function setPrice(priceMin, priceMax, discount) {
-            let size = document.getElementById('pa_size').value;
+            let size = document.getElementById('pa_size').value.replace(" ","");
+            console.log(size)
+            let realSize = size.split('|');
             let dom = document.getElementById('final-price');
-            let sizeArr = ['s ', 'm ', 'l ', 'xl ', 'xxl ', 'xxxl '];
-            let steps = parseFloat(priceMax - priceMin) / parseFloat(sizeArr.length)
-            let finalPrice = priceMin + parseFloat((sizeArr.indexOf(size) * steps).toFixed(0));
-            if (size == 'xxxl ') {
-                finalPrice += 1
-            }
-            dom.innerHTML = `<span class="old-price" style="font-weight: normal!important;font-size:1.9rem">$ ${finalPrice / discount}.99</span>`
-            dom.innerHTML += '  $' + finalPrice + '.99';
+            let finalPrice = priceMin * parseInt(realSize[0]);
+            let realPrice = priceMax * parseInt(realSize[1]);
+            console.log("REAL SIZE: ",realSize);
+            dom.innerHTML = `<span class="old-price" style="font-weight: normal!important;font-size:1.9rem">$ ${parseFloat(realPrice).toFixed(2)}</span>`
+            dom.innerHTML += '  $' +parseFloat(finalPrice).toFixed(2);
         }
     </script>
 </body>

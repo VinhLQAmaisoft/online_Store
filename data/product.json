@@ -1,20 +1,21 @@
-[{
+[
+    {
         "id": "01",
-        "name": "Halter Bodysuit",
+        "name": "🎄Dazzling™ Pre-lit Artificial Christmas Hanging Basket - Flocked with Mixed Decorations and White LED Lights - Frosted Berry",
         "code": "product-19",
         "rating": "5",
-        "priceMin": "53",
-        "priceMax": "60",
+        "priceMin": "5",
+        "priceMax": "15",
         "featureImage": [
-            "/images/product-19-300x410.jpg",
-            "/images/product-17-300x410.jpg"
+            "/images/product1/1.png",
+            "/images/product1/2.png"
         ],
-        "shortDesc": "No description",
+        "shortDesc": "Buy 3 Get 1 Free, Buy 5 Get 2 Free{from California} Only 236 left in stock",
         "subImage": [
-            "/images/product-19-180x180.jpg",
-            "/images/product-17-180x180.jpg",
-            "/images/product-13-180x180.jpg",
-            "/images/product-15-180x180.jpg"
+            "/images/product1/6.jpeg",
+            "/images/product1/1.png",
+            "/images/product1/2.png",
+            "/images/product1/5.png"
         ],
         "desc": "NO FULL DESCRIPTION"
     },
@@ -198,4 +199,5 @@
         ],
         "desc": "NO FULL DESCRIPTION"
     }
+    
 ]
