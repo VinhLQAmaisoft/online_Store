@@ -13087,7 +13087,7 @@ h2.sc_item_title.sc_item_title_style_default {
     margin:0;
 }
 .sc_blogger_classic .sc_blogger_item_button .sc_button {
-    text-transform: lowercase;
+    text-transform:capitalize!important
     border: none;
 }
 .sc_blogger_classic .sc_blogger_item_button {
@@ -13216,7 +13216,7 @@ h2.sc_item_title.sc_item_title_style_default {
 
 
 .sc_promo_modern .sc_item_button .sc_button_simple {
-    text-transform: lowercase;
+    text-transform:capitalize!important
     font-size: 1.8em;
     line-height: 1.1em;
     border-bottom: 2px solid;

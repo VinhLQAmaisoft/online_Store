@@ -83,7 +83,8 @@
                                                     <div class="icons">
                                                         <a href="/product/<%=product.id%>"
                                                             class="shop_cart icon-cart-2 button add_to_cart_button product_type_variable"
-                                                            onclick="buynow()">Buy Now</a>
+                                                            onclick="buynow()" 
+ style="text-transform:Capitalize!important">Buy Now</a>
                                                         <a href="/product/<%=product.id%>"
                                                             class="shop_link button icon-link">Details</a>
                                                     </div>
@@ -108,13 +109,11 @@
                                                     <span class="price old-price">
                                                         <span class="woocs_price_code">
                                                             <span class="amount">
-                                                                <%=product.priceMin /product.discount%><span
-                                                                        class="decimals">99</span><span
+                                                                <%=(product.priceMin /product.discount).toFixed(2)%><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>
                                                             </span>–
                                                             <span class="amount">
-                                                                <%=product.priceMax / product.discount%><span
-                                                                        class="decimals">99</span><span
+                                                                <%=(product.priceMax / product.discount).toFixed(2)%><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>
                                                             </span>
                                                         </span>
@@ -124,19 +123,18 @@
                                                         <span class="woocs_price_code">
                                                             <span class="amount">
                                                                 <%=product.priceMin %><span
-                                                                        class="decimals">99</span><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>
                                                             </span>–
                                                             <span class="amount">
                                                                 <%=product.priceMax %><span
-                                                                        class="decimals">99</span><span
                                                                         class="woocommerce-Price-currencySymbol">$</span>
                                                             </span>
                                                         </span>
                                                     </span>
                                                     <a href="/product/<%=product.id%>"
                                                         class="button product_type_variable add_to_cart_button sc_button_hover_slide_left"
-                                                        onclick="buynow()">Buy Now</a>
+                                                        onclick="buynow()" 
+ style="text-transform:Capitalize!important">Buy Now</a>
                                                 </div>
                                                 <!-- /.post_data -->
                                             </div>
@@ -195,7 +193,7 @@
                                                 <li class="cat-item"><a href="#">View All Panties</a></li>
                                             </ul>
                                         </li>
-                                        <li class="cat-item"><a href="#">Pretty Little World</a></li>
+                                        <li class="cat-item"><a href="#">Fashion</a></li>
                                         <li class="cat-item"><a href="#">Sales</a></li>
                                         <li class="cat-item"><a href="#">Sexy Intimates</a></li>
                                         <li class="cat-item"><a href="#">Sleep &amp; Lounge</a></li>
@@ -224,9 +222,8 @@
                                                     class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">53<span
-                                                        class="decimals">99</span><span
                                                         class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                    class="amount">59<span class="decimals">99</span>
+                                                    class="amount">59
                                                     <span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>
                                             </span>
@@ -240,9 +237,8 @@
                                                     class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">66<span
-                                                        class="decimals">99</span><span
                                                         class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                    class="amount">72<span class="decimals">99</span>
+                                                    class="amount">72
                                                     <span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>
                                             </span>
@@ -257,9 +253,8 @@
                                                     class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">53<span
-                                                        class="decimals">99</span><span
                                                         class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                    class="amount">56<span class="decimals">99</span>
+                                                    class="amount">56>
                                                     <span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>
                                             </span>
@@ -273,9 +268,8 @@
                                                     class="w_100per"><strong class="rating">5</strong> out of 5</span>
                                             </div>
                                             <span class="woocs_price_code"><span class="amount">16<span
-                                                        class="decimals">99</span><span
                                                         class="woocommerce-Price-currencySymbol">&#36;</span></span>&ndash;<span
-                                                    class="amount">22<span class="decimals">99</span>
+                                                    class="amount">22
                                                     <span class="woocommerce-Price-currencySymbol">&#36;</span>
                                                 </span>
                                             </span>

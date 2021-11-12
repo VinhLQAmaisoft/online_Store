@@ -137,7 +137,7 @@
         </dd>
     </dl>
         <span class="quantity">${cartItem.quantity} × <span
-            class="amount">${cartItem.price}.99<span
+            class="amount">${cartItem.price}<span
                 class="woocommerce-Price-currencySymbol">$</span></span>
         </span>
     </li>
@@ -167,9 +167,9 @@
         for (let i = 0; i < response.length; i++) {
             const cartItem = response[i];
             cartDom.innerHTML += addCartItem(cartItem, i)
-            subtotal += parseInt(cartItem.price) * parseInt(cartItem.quantity);
+            subtotal += parseFloat(cartItem.price) * parseFloat(cartItem.quantity);
         }
-        cartSubtotal.innerHTML = subtotal + ".00";
+        cartSubtotal.innerHTML = subtotal ;
         cartQuantity.innerHTML = response.length;
     }
     getCartData()

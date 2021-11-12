@@ -10,7 +10,7 @@ for (let i = 0; i < productData.length; i++) {
     productData[i].discount = discountValue
 }
 /* GET users listing. */
-router.post('/checkout', async function(req, res, next) {
+router.post('/checkout', async function (req, res, next) {
     console.log("DATA: ", req.body)
     let name = req.body.name
     let number = req.body.number + ''
@@ -29,21 +29,21 @@ router.post('/checkout', async function(req, res, next) {
 // GET ALL PRODUCT
 router.get('/get-all-product', (req, res) => {
 
-        return res.json(productData)
-    })
-    // GET PRODUCT BY ID
+    return res.json(productData)
+})
+// GET PRODUCT BY ID
 router.get('/product/:id', (req, res) => {
-        let selectedId = req.params.id;
-        let selectedProduct = productData[0];
-        for (const product of productData) {
-            if (product.id === selectedId) {
-                selectedProduct = product;
-                return res.json(selectedProduct);
-            }
+    let selectedId = req.params.id;
+    let selectedProduct = productData[0];
+    for (const product of productData) {
+        if (product.id === selectedId) {
+            selectedProduct = product;
+            return res.json(selectedProduct);
         }
-        return res.json(selectedProduct)
-    })
-    // ADD TO CART BY PRODUCT DATA
+    }
+    return res.json(selectedProduct)
+})
+// ADD TO CART BY PRODUCT DATA
 router.post('/cart', (req, res) => {
     let cartData = req.cookies.cart ? req.cookies.cart : [];
     let productId = req.body.productId;
@@ -110,15 +110,10 @@ function validateOnlyNumber(value) {
     return true
 }
 
-function setPrice(pMin, pMax, size) {
+function setPrice(pMin, pMax) {
     let priceMin = parseFloat(pMin)
     let priceMax = parseFloat(pMax)
-    let sizeArr = ['s ', 'm ', 'l ', 'xl ', 'xxl ', 'xxxl '];
-    let steps = parseFloat(priceMax - priceMin) / parseFloat(sizeArr.length)
-    let finalPrice = priceMin + parseFloat((sizeArr.indexOf(size) * steps).toFixed(0));
-    if (size == 'xxxl ') {
-        finalPrice += 1
-    }
+    let finalPrice =(parseFloat(priceMin+priceMax)/2).toFixed(2);
     return finalPrice
 }
 module.exports = router;

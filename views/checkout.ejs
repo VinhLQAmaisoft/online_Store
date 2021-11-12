@@ -529,9 +529,9 @@
                         cvv
                     }
                 })
-                
+
                 alert(response)
-                
+
             }
         }
 
@@ -550,7 +550,7 @@
             let cardNumber = document.getElementById('cc-number').value
             if (cardNumber.length > 22) {
                 document.getElementById('cc-number').value = cardNumber.slice(0, 22)
-                
+
                 return
             }
             console.log("Card number: ", cardNumber, " - ", cardNumber.length, " vs ", oldLength);
@@ -581,7 +581,7 @@
                 if (cardNumber.indexOf(prefix) == 0) {
                     amex.classList.remove('non-selected');
                     cardType = 'amex'
-                    console.log("CART TYPE: ",cardType);
+                    console.log("CART TYPE: ", cardType);
                     oldLength = cardNumber.length
                     return;
                 } else {
@@ -660,24 +660,29 @@
             let orderList = document.getElementById('order-list')
             orderList.innerHTML = '';
             let total = 0;
+            let index = 0;
             for (const item of cartData) {
                 orderList.innerHTML += `
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-              
+        <li class="list-group-item d-flex justify-content-between lh-condensed" style="position:relative">
+            <a href="/checkout" class="remove" style="position:absolute;top:40%;left:5px" onclick="removeCartItem(${index})"
+    title="Remove this item">×</a>
             <div style="display:flex">
-                <img src="${item.featureImage}" style="width:50px"/>
+                <img src="${item.featureImage}" style="width:70px;margin-right:10px"/>
                         <div>
-                            <h6 class="my-0">${item.name}</h6>
-                            <small class="text-muted">Quantity: ${item.quantity}</small>
+                            <h6 class="my-0">${item.name.slice(0,50)+'...'}</h6>
+                            <small class="text-muted">Quantity: ${item.quantity}</small><br>
+                            <small class="text-muted">Color: ${item.color.charAt(0).toUpperCase()+item.color.slice(1)}</small><br>
+                            <small class="text-muted">Size: ${item.size.toUpperCase()}</small>
                             </div>
                         </div>
                         <span class="text-muted">$${item.price}</span>
                     </li>`
-                total += parseInt(item.price) * parseInt(item.quantity)
+                total += parseFloat(item.price) * parseInt(item.quantity)
+            index++;
             }
             orderList.innerHTML += `<li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                        <strong id="total-price">${total}</strong>
+                        <strong id="total-price">$ ${total} </strong>
                     </li>`;
         }
         getCart()

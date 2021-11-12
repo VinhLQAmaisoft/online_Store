@@ -100,7 +100,7 @@ body[class*="woocommerce-"] table td {
     padding: 0.7em 1.6em;
     text-transform: none;
     white-space: nowrap;
-    text-transform: lowercase;
+    text-transform:capitalize!important
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1004,7 +1004,7 @@ div.pp_woocommerce .pp_arrow_previous {
     font-weight: 500;
     line-height: 13px;
     padding: 4px 13px;
-    text-transform: lowercase;
+    text-transform:capitalize!important
     vertical-align: top;
 }
 
@@ -1014,7 +1014,7 @@ div.pp_woocommerce .pp_arrow_previous {
     font-weight: 500;
     line-height: 13px;
     padding: 6px 13px;
-    text-transform: lowercase;
+    text-transform:capitalize!important
     vertical-align: top;
 }
 
@@ -1211,7 +1211,7 @@ div.pp_woocommerce .pp_arrow_previous {
     padding: 0.7em 1.6em;
     text-transform: none;
     white-space: nowrap;
-    text-transform: lowercase;
+    text-transform:capitalize!important
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

@@ -2919,7 +2919,7 @@ body.mobile_layout.menu_style_right .menu_side_wrap .menu_side_button:hover {
     margin-top: 1.75em;
     padding: 0.73em 1.6em;
     white-space: nowrap;
-    text-transform: lowercase;
+    text-transform:capitalize!important
 }
 
 /* Tabs */
@@ -4008,7 +4008,7 @@ div.post_meta_item.post_share {
     margin: 0 0 0;
     padding-top: 4em;
     text-align: center;
-    text-transform: lowercase;
+    text-transform:capitalize!important
 }
 
 .blog_style_excerpt .nav-links-more {
@@ -5009,7 +5009,7 @@ body[class*="blog_style_portfolio"] .nav-links-old, body[class*="blog_style_clas
 
 .comments_wrap .form-submit input[type="submit"] {
     display: inline-block;
-    text-transform: lowercase;
+    text-transform:capitalize!important
 }
 
 form .error_field {
@@ -6754,7 +6754,7 @@ a.eg-henryharrison-element-1, a.eg-henryharrison-element-2 {
     z-index: 2 !important;
     display: block;
     font-family: "Open Sans";
-    text-transform: lowercase;
+    text-transform:capitalize!important
     border-top-width: 0px;
     border-right-width: 0px;
     border-bottom-width: 0px;
@@ -6829,7 +6829,7 @@ a.eg-henryharrison-element-1, a.eg-henryharrison-element-2 {
     font-weight: 400;
     border-radius: 0px 0px 0px 0px;
     background-color: rgba(255, 119, 154, 1.00);
-    text-transform: lowercase;
+    text-transform:capitalize!important
     border-top-width: 0px;
     border-right-width: 0px;
     border-bottom-width: 0px;
@@ -7790,7 +7790,7 @@ a.inst_hover:hover {
 .slider_alias_rsl2 .tp-caption.trx-button-main-2.rev-btn {
     z-index: 7;
     white-space: nowrap;
-    text-transform: lowercase;
+    text-transform:capitalize!important
     border-width: 0px 0px 3px 0px;
     outline: none;
     box-shadow: none;
@@ -8607,10 +8607,10 @@ span.amount>.decimals {
 /* Chỉnh nút buy now */
 
 .btn-add-to-cart {
-    color: #fe7799!important;
+    color: #FFFFFF!important;
     margin-right: 10px!important;
-    border: 3px solid #fe7799!important;
-    background-color: white!important;
+    border: 3px solid #FFFFFF!important;
+    background-color: black!important;
 }
 
 .btn-add-to-cart:hover {
@@ -8621,8 +8621,8 @@ span.amount>.decimals {
 .btn-buy-now {
     color: #fff!important;
     margin-right: 10px!important;
-    border: 3px solid #fe7799!important;
-    background-color: #fe7799!important;
+    border: 3px solid #FF0000!important;
+    background-color: #FF0000!important;
 }
 
 .btn-buy-now:hover {
